@@ -12,7 +12,7 @@ namespace ProductsManager.Models
     public class Product
     {
      [Key]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         [Required, StringLength(50), Display(Name = " Product Name")]
         public string Name { get; set; }
