@@ -1,4 +1,5 @@
 ﻿@page
+@using ProductsManager.Components;
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -8,3 +9,4 @@
     <h1 class="display-4">Welcome to PET's World</h1>
     <p>For your Pet's lifestyle.</p>
 </div>
+@(await Html.RenderComponentAsync<DisplayProducts>(RenderMode.ServerPrerendered))
