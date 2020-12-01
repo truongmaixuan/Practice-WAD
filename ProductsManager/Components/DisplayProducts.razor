@@ -1,5 +1,22 @@
-﻿<h3>DisplayProducts</h3>
+﻿@using Microsoft.AspNetCore.Components.Web
+@using ProductsManager.Services;
+@using ProductsManager.Models;
 
+@inject JsonFileProductServices ProductServices
+<div class="card-columns">
+    @foreach (var product in ProductServices.GetProducts())
+    {
+        <div class="card">
+            <div class="card-img">
+                <img src="@product.Image" style="width: 250px; height: 250px" />
+            </div>
+            <div class="card-body">
+                <h5>@product.Name</h5>
+                <h6>@product.Price</h6>
+            </div>
+        </div>
+    }
+</div>
 @code {
 
 }
